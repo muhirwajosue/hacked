@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Survey Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question strong {
+            font-size: 18px;
+        }
+        .question p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+    <h1>Truth Survey Results</h1>
+
+    <div id="surveyResults"></div>
+</div>
+
+<script>
+    // Get the survey responses from localStorage
+    const responses = JSON.parse(localStorage.getItem('truthSurveyResponses'));
+    const resultsContainer = document.getElementById('surveyResults');
+
+    // Display the responses on the new page
+    if (responses) {
+        let resultHtml = '';
+        for (const [question, answer] of Object.entries(responses)) {
+            resultHtml += `<div class="question">
+                                <strong>${question}:</strong>
+                                <p>${answer}</p>
+                            </div>`;
+        }
+        resultsContainer.innerHTML = resultHtml;
+    } else {
+        resultsContainer.innerHTML = '<p>No responses found.</p>';
+    }
+</script>
+
+</body>
+</html>

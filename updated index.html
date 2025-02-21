@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin the Wheel TRUTH or DARE Game</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="formbox">
+        <br><br> 
+        <a href="DARE QUESTION.HTML"><button id="dare-btn" disabled>DARE QUESTIONS</button></a><br><br><br>
+        <a href=""><button id="truth-btn" disabled>TRUTH QUESTIONS</button></a>
+    </div>
+    <div class="wrapper">
+        <h1> TRUTH or DARE</h1>
+        <div class="container">
+            <canvas id="wheel"></canvas>
+            <button id="spin-btn">Spin</button>
+            <img src="spinner-arrow-.svg" alt="spinner-arrow" />
+        </div>
+
+        <div id="final-value">
+            <p>Click On The Spin Button To Start</p>
+        </div>
+    </div>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Chart JS Plugin for displaying text over chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+
+    <!-- Script Js -->
+    <script src="./script.js"></script>
+
+    <script>
+        // Initialize variables
+        let isSpinning = false;
+        let currentResult = null; // Will store either "Truth" or "Dare"
+
+        // Get DOM elements
+        const spinBtn = document.getElementById('spin-btn');
+        const truthBtn = document.getElementById('truth-btn');
+        const dareBtn = document.getElementById('dare-btn');
+        const finalValue = document.getElementById('final-value');
+
+        // Spin the wheel when the spin button is clicked
+        spinBtn.addEventListener('click', () => {
+            if (isSpinning) return; // Prevent spin if already spinning
+            isSpinning = true;
+
+            // Disable buttons during the spin
+            spinBtn.disabled = true;
+            truthBtn.disabled = true;
+            dareBtn.disabled = true;
+
+            finalValue.textContent = "Spinning...";
+
+            // Simulate wheel spinning with some delay (for example, 3 seconds)
+            setTimeout(() => {
+                // Randomly choose "Truth" or "Dare"
+                currentResult = Math.random() > 0.5 ? "Truth" : "Dare";
+                finalValue.textContent = `You got: ${currentResult}`;
+
+                // Enable the corresponding button based on the result
+                if (currentResult === "Truth") {
+                    truthBtn.disabled = false;
+                } else {
+                    dareBtn.disabled = false;
+                }
+
+                // Enable the spin button again for the next round
+                spinBtn.disabled = false;
+                isSpinning = false;
+            }, 3000); // 3 seconds for the spin animation
+        });
+    </script>
+</body>
+</html>
