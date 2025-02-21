@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Spin the Wheel TRUTH or DARE Game</title>
-        
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url(bgimg.jpg);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        header {
+            background-image: url(header.jpeg);
+            padding: 20px;
+        }
+        .content button {
+            background: blue;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 1em;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        .content button:hover {
+            background-color: skyblue;
+            transform: scale(1.1);
+        }
+        .content button:active {
+            transform: scale(0.95);
+        }
+        img {
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+        .category {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .category:hover {
+            transform: scale(1.1);
+        }
+        .category img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .category img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .category p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
 
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="./style.css">
-    </head>
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-    <body>
-        <div class="formbox">
-           <br><br> <a href="DARE QUESTION.HTML"><button onclick="alert('DARE QUESTION')">DARE QUESTIONS</button></a><br><br><br><a href="TRUTHQUESTION.HTML"><button onclick="alert('TRUTH QUESTION')">TRUTH QUESTIONS</button></a>
+        /* Fade-In from Bottom */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <a href="#"><button>HOME</button></a>
+            <a href="#"><button>ABOUT</button></a>
+            <a href="#"><button>PRODUCT</button></a>
+            <a href="#"><button>CONTACT</button></a>
         </div>
-        <div class="wrapper">
-            <h1> TRUTH or DARE</h1>
-            <div class="container">
-                <canvas id="wheel"></canvas>
-                <button id="spin-btn">Spin</button>
-                <img src="spinner-arrow-.svg" alt="spinner-arrow" />
-            </div>
-
-            <div id="final-value">
-                <p>Click On The Spin Button To Start</p>
-            </div>
+    </header>
+    
+    <div class="container">
+        <div class="category">
+           <a href="clothing.html"><img src="clothing.jpeg" alt="Clothing"></a>
+            <p>CLOTHING</p>
         </div>
-
-        <!-- Chart JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
-        <!-- Chart JS Plugin for displaying text over chart -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
-
-        <!-- Script Js -->
-        <script src="./script.js"></script>
-    </body>
+        <div class="category">
+           <a href="#"> <img src="play.jpeg" alt="Playing"></a>
+            <p>PLAYING</p>
+        </div>
+        <div class="category">
+            <a href="#"><img src="tech.jpeg" alt="Technology"></a>
+            <p>TECHNOLOGY</p>
+        </div>
+    </div>
+</body>
 </html>
