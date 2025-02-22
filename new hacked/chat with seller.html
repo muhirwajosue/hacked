@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Seller</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .chat-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Chat with Seller</h2>
+        <div class="chat-box" id="chatBox">
+            <p><strong></strong> Hello! do you need any more informations?</p>
+        </div>
+        <div class="input-group">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()"><img src="msg2.png"width="40px" height="40px" alt="send not found"></button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const chatBox = document.getElementById("chatBox");
+            if (messageInput.value.trim() !== "") {
+                const userMessage = document.createElement("p");
+                userMessage.innerHTML = `<strong></strong> ${messageInput.value}`;
+                chatBox.appendChild(userMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+                
+                setTimeout(() => {
+                    const sellerResponse = document.createElement("p");
+                    sellerResponse.innerHTML = `<strong></strong> Thank you for your message! for more infomations call +250 0728924004?`;
+                    chatBox.appendChild(sellerResponse);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 1000);
+                
+                messageInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
