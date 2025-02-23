@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Materials</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-image: url(header.jpeg);
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .item p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        button{
+            background-color: blue;
+            width: 200px;
+            height: 50px;
+            border-radius: 1em;
+            cursor: pointer;
+        }
+        .photo{
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Playing Materials
+    </header>
+    <br><br>
+    <div class="photo">
+        <a href="chat with seller.html">
+            <img src="chat icon.png" width="30px" height="30px" alt="chat">
+        </a>
+        <p>Chat with a seller</p>
+    </div>
+    <div class="container">
+        <div class="item">
+            <img src="Football.jpeg" alt="Football">
+            <p>Price: $15.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="Chess Set.jpeg" alt="Chess Set">
+            <p>Price: $25.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="Video Game Controller.jpeg" alt="Video Game Controller">
+            <p>Price: $50.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="Basketball.jpeg" alt="Basketball">
+            <p>Price: $20.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="Board Game.jpeg" alt="Board Game">
+            <p>Price: $30.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+        <div class="item">
+            <img src="Tennis Racket.jpeg" alt="Tennis Racket">
+            <p>Price: $45.00</p>
+            <button onclick="alert('The product added to cart successfully')">Add to cart</button>
+        </div>
+    </div>
+</body>
+</html>

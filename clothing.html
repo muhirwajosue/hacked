@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        header {
+            background-image: url(header.jpeg);
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+        .item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .item img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .item img:hover {
+            transform: scale(1.1);
+        }
+        .item p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        button {
+            background-color: blue;
+            width: 200px;
+            height: 50px;
+            border-radius: 1em;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: skyblue;
+            transform: scale(1.1);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        .photo {
+            text-align: center;
+            cursor: pointer;
+        }
+        .photo img {
+            transition: transform 0.3s ease;
+        }
+        .photo:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Fade-In from Bottom */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Clothing Collection
+    </header>
+    <br><br>
+    <div class="photo">
+        <a href="chat with seller.html">
+            <img src="chat icon.png" width="30px" height="30px" alt="Chat">
+        </a>
+        <p>Chat with a seller</p>
+    </div>
+   
+    <div class="container">
+        <div class="item">
+            <img src="Stylish Shirt.jpeg" alt="Shirt">
+            <p>Price: $10.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="Classic Jeans.jpeg" alt="Jeans">
+            <p>Price: $20.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="Modern Jacket.jpeg" alt="Jacket">
+            <p>Price: $40.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="dress.jpeg" alt="Dress">
+            <p>Price: $200.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="clob.jpeg" alt="Clothing">
+            <p>Price: $40.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="clot.jpeg" alt="Clothing">
+            <p>Price: $30.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="cloy.jpeg" alt="Clothing">
+            <p>Price: $40.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="clox.jpeg" alt="Clothing">
+            <p>Price: $40.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="clop.jpeg" alt="Clothing">
+            <p>Price: $80.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="clog.jpeg" alt="Clothing">
+            <p>Price: $90.00</p>
+            <button onclick="goToPaymentPage()">Add to Cart</button>
+        </div>
+    </div>
+    <script>
+        function goToPaymentPage() {
+            window.location.href = "payment.html";
+        }
+    </script>
+    
+</body>
+</html>
